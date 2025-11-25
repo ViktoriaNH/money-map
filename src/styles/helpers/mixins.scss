@@ -142,7 +142,7 @@
   border: 1px solid var($color-var);
 }
 
-// по новому макету 
+// по новому макету
 
 @mixin text-secondary($max: 16, $min: 9) {
   color: var(--color-text-secondary);
@@ -155,4 +155,9 @@
   font-weight: 600;
   font-size: fluid($max, $min);
   line-height: 24px;
+}
+
+@mixin card-border {
+  border-radius: var(--border-radius-xl);
+  border: 1px solid var(--color-background-input-main);
 }

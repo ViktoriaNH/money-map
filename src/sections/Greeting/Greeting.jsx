@@ -12,7 +12,7 @@ const Greeting = () => {
   };
   return (
     <section className="greeting">
-      <div className="greeting__container">
+      <div className="greeting__inner">
         <div className="greeting__content">
           <div className="greeting__text">
             <h1 className="greeting__title">Привет!</h1>
