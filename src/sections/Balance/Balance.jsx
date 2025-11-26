@@ -1,3 +1,4 @@
+import ColorPicker from '../../components/ColorPicker/ColorPicker';
 import WalletCard from '../../components/WalletCard/WalletCard';
 import './Balance.scss'
 
@@ -8,6 +9,7 @@ return (
             <h1 className='balance__title'>Баланс</h1>
             <span className="balance__amount">3000 BYN</span>
             <WalletCard />
+            <ColorPicker />
         </div>
 
     </section>
