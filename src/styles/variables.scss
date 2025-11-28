@@ -1,37 +1,38 @@
 :root {
   // текстовые
-  --color-text-button-primary: #FFFFFF;
+  --color-text-button-primary: #ffffff;
   // --color-text-primary: #0e0d1a;
   --color-text-secondary: #808080;
 
   // Кнопки
-  --color-background-button-primary: #4949EB;
-  --color-background-button-primary-hover: #1414BA;
+  --color-background-button-primary: #4949eb;
+  --color-background-button-primary-hover: #1414ba;
   --color-background-button-secondary: #ffffff;
-  --color-background-button-secondary-hover: #4949EB;
-  --color-background-button-primary-pressed:  #1414BA;
+  --color-background-button-secondary-hover: #4949eb;
+  --color-background-button-primary-pressed: #1414ba;
   --color-background-button-primary-disabled: #a8a8ad;
-  --color-bg-accent-button: #DDF344;
-  --color-bg-accent-button-hover:#ADC40D;
+  --color-bg-accent-button: #ddf344;
+  --color-bg-accent-button-hover: #adc40d;
 
   // Инпуты цвета фона и рамок
 
-  --color-background-input-main: #D9D9D9;
-  --color-border-input-second: #4949EB;
+  --color-background-input-main: #d9d9d9;
+  --color-background-input-secondary: #f7f7f7;
+  
+  --color-border-input-second: #4949eb;
   --color-border-input-filled: #52a479;
-  --color-border-input-error: #EB4949;
+  --color-border-input-error: #eb4949;
   --color-border-input-disabled-success: #c0c8c4;
   --color-border-input-disabled-error: #d7b9b9;
   --color-border-input-disabled-normal: #cbc7ce;
 
   // Фоновые
 
-  --color-body-secondary: #F5F5F5;
+  --color-body-secondary: #f5f5f5;
 
-  // 
+  //
 
-  --color-navitem-active: #EAEAFD;
-
+  --color-navitem-active: #eaeafd;
 
   // --border: var(--border-width-s) solid var(--color-black-15);
 
@@ -67,7 +68,7 @@
   --border-radius-xxl: 100px;
   --border-radius-xl: 16px;
   --border-radius-l: 12px;
-   --border-radius-m: 8px;
+  --border-radius-m: 8px;
   --border-radius-xxxs: 4px;
 
   --font-family-base: "Open Sans", sans-serif;

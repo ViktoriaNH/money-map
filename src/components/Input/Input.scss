@@ -38,19 +38,19 @@
     padding-left: 36px;
 
     &:hover {
-      @include input-border(--color-border-input-second);
+      border: 1px solid var(--color-border-input-second);
     }
 
     &:active {
-      @include input-border(--color-border-input-second);
+      border: 1px solid var(--color-border-input-second);
     }
 
     &:focus {
-      @include input-border(--color-border-input-second);
+      border: 1px solid var(--color-border-input-second);
     }
 
     &--filled {
-      @include input-border(--color-border-input-filled);
+      border: 1px solid var(--color-border-input-filled);
     }
 
     &--success {
@@ -58,20 +58,20 @@
     }
 
     &--error {
-      @include input-border(--color-border-input-error);
+      border: 1px solid var(--color-border-input-error);
       color: var(--color-border-input-error);
     }
 
     &--disabled-success {
-      @include input-border(--color-border-input-disabled-success);
+      border: 1px solid var(--color-border-input-disabled-success);
     }
 
     &--disabled-error {
-      @include input-border(--color-border-input-disabled-error);
+      border: 1px solid var(--color-border-input-disabled-error);
     }
 
     &:disabled {
-      @include input-border(--color-border-input-disabled-normal);
+      border: 1px solid var(--color-border-input-disabled-normal);
       background-color: var(--color-background-input-second);
     }
     &:checked {

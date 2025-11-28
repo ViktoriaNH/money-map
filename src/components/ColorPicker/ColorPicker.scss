@@ -1,0 +1,32 @@
+.color-picker {
+  background: var(--color-background-input-secondary);
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px;
+
+  @include input-border;
+
+  &__item {
+    @include square(24px);
+
+    border-radius: var(--border-radius-xxl);
+    border-color: transparent;
+    cursor: pointer;
+     position: relative;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__item--active::after {
+    content: "✓"; 
+    color: white; 
+    font-size: 18px; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* центрируем */
+  }
+}
