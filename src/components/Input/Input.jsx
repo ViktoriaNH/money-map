@@ -1,7 +1,5 @@
-import { Link } from "react-router-dom";
 import "./Input.scss";
-import InputField from './../InputField/InputField';
-
+import InputField from "./../InputField/InputField";
 
 const Input = ({
   fields,

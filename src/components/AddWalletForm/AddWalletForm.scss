@@ -1,8 +1,19 @@
 .add-wallet-form {
-      background-color: var(--color-text-button-primary);
+  background-color: var(--color-text-button-primary);
+
   max-width: 709px;
+  min-width: 0; // разрешаем сжиматься при нехватке места
+  width: 100%;
   margin: 0 auto;
   padding: 32px;
-  
+  position: relative;
+
   @include card-border;
 }
+
+// .button--saveOperation {
+//     margin-top: 32px;
+
+// }
+
+

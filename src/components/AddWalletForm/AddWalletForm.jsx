@@ -9,12 +9,14 @@ const AddWalletForm = () => {
 
   return (
     <main className="add-wallet-form">
-      <OperationsForm
-        title={operationTitle}
-        fields={addWalletfields}
-        submitText={submitTitle}
-      />
-      <Button submitText="Добавить" variant="saveOperation" />
+      <div className="add-wallet-form__inner">
+        <OperationsForm
+          title={operationTitle}
+          fields={addWalletfields}
+          submitText={submitTitle}
+        />
+        <Button submitText="Добавить" variant="saveOperation" />
+      </div>
     </main>
   );
 };

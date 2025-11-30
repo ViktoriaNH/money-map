@@ -17,8 +17,8 @@ const OperationsForm = (props) => {
           {fields.map((field) => {
             if (field.type === "color-picker") {
               return (
-                <div className="form-field" key={field.id}>
-                  <label className="form-label">{field.label}</label>
+                <div className="operations__field" key={field.id}>
+                  <label className="operations__label">{field.label}</label>
                   <ColorPicker
                     value={walletColor}
                     onColorSelect={setWalletColor}
@@ -29,6 +29,7 @@ const OperationsForm = (props) => {
 
             return (
               <Input
+                className='operations__input'
                 key={field.id}
                 fields={[field]}
                 onStatusChange={() => {}}

@@ -66,11 +66,12 @@
   }
 
   &--saveOperation {
-      background-color: var(--color-background-button-primary);
-    flex: 1 1 190px; // 190px, но можно меньше/больше
+    background-color: var(--color-background-button-primary);
+    color: var(--color-text-button-primary);
     max-width: 190px;
     min-width: 0; // разрешаем сжиматься при нехватке места
     width: 100%;
+    margin-top: 32px;
 
     padding: 16px 56px;
     border: none;

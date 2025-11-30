@@ -2,4 +2,27 @@
   &__title {
     margin-bottom: 32px;
   }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    
+  }
+}
+
+.form__label,
+.operations__label {
+  display: block;
+  @include text-label(14, 8);
+  color: var(--color-text-secondary);
+}
+
+.form__input-base {
+  @include input-border;
+  background-color: var(--color-background-input-secondary);
+
+  width: 100%;
+  padding: 12px 16px;
 }

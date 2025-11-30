@@ -103,7 +103,7 @@
 @mixin text-label($max: 14, $min: 14) {
   font-weight: 600;
   font-size: fluid($max, $min);
-  line-height: 130%;
+  line-height: 200%;
 }
 
 // helper
@@ -166,3 +166,4 @@
   border-radius: var(--border-radius-m);
   border: 1px solid var(--color-background-input-main);
 }
+
