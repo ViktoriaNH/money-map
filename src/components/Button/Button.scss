@@ -64,4 +64,21 @@
       background-color: var(--color-bg-accent-button-hover);
     }
   }
+
+  &--saveOperation {
+      background-color: var(--color-background-button-primary);
+    flex: 1 1 190px; // 190px, но можно меньше/больше
+    max-width: 190px;
+    min-width: 0; // разрешаем сжиматься при нехватке места
+    width: 100%;
+
+    padding: 16px 56px;
+    border: none;
+
+    @include text-button;
+
+    @include hover {
+      background-color: var(--color-background-button-primary-hover);
+    }
+  }
 }

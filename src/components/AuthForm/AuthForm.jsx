@@ -62,7 +62,7 @@ const AuthForm = ({ title, submitText, fields, notice, onSubmit }) => {
               onClick={() => navigate("/welcome")}
             />
 
-            <h2 id={title}>{title}</h2>
+            <h1 id={title}>{title}</h1>
 
             <Input
               fields={fields}

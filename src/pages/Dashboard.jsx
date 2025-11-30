@@ -1,3 +1,4 @@
+import AddWalletForm from "../components/AddWalletForm/AddWalletForm";
 import usePageTitle from "../hooks/usePageTitle";
 import Header from "../layouts/Header/Header";
 import PageWrapper from "../layouts/PageWrapper";
@@ -13,6 +14,7 @@ const Dashboard = () => {
       <PageWrapper>
         <Greeting />
         <Balance />
+        <AddWalletForm />
       </PageWrapper>
     </div>
   );

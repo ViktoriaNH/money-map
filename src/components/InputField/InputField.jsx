@@ -8,18 +8,15 @@ import { usePassStatus } from "../../hooks/usePassStatus";
 const InputField = ({
   field,
   onStatusChange,
-  serverError, // новый проп: строка с серверной ошибкой для этого поля
-  clearServerError, // новый проп: функция (fieldId) => void
+  serverError,
+  clearServerError,
 }) => {
   const [value, setValue] = useState("");
   const [touched, setTouched] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
-  // не хранится в useState, потому что вычисляется из value
-  // это называется derived state — вычисляемое состояние
   const isFilled = value.trim() !== "";
 
-  // вычисляем валидацию
   const { hasError, message } = validateInputs(
     field,
     value,
@@ -27,37 +24,24 @@ const InputField = ({
     serverError
   );
 
-  // успех (галочка) показывается только после blur
   const isSuccess = touched && isFilled && !hasError;
-
-  //  const errorMessage = serverError || message; // приоритет серверной ошибки
-  // const isError = Boolean(serverError || message);
-
-  // const handleChange = (e) => {
-  //   setValue(e.target.value);
-  // }; - тут кнопка будет задизэйблена и после ввода последнего поля, надо куда-то кликать дополнительно, чтобы сработал success и кнопка стала активной
 
   const handleChange = (e) => {
     const newValue = e.target.value;
     setValue(newValue);
 
-    // очищаем серверную ошибку, когда юзер начал печатать
     if (serverError) {
       clearServerError(field.id);
     }
 
-    // Success для кнопки: обновляем статус поля на лету
     const successForButton = newValue.trim() !== "" && !hasError;
     onStatusChange(field.id, successForButton);
   };
 
   const handleBlur = () => {
     setTouched(true);
-    // показываем ошибки только после blur
   };
 
-  // вычисляем динамически type, а не берем из fields
-  // нужно для отделения логики поля пароля
   const inputType =
     field.type === "password"
       ? showPassword
@@ -65,15 +49,13 @@ const InputField = ({
         : "password"
       : field.type;
 
-  // класс инпута в зависимости от состояния
   const inputClass = `
   ${getInputClass(field, isFilled, hasError)}
   ${isSuccess ? "form__input--success" : ""}
 `;
 
-  usePassStatus(isSuccess, field.id, onStatusChange); // отслеживает, когда isSuccess меняется
+  usePassStatus(isSuccess, field.id, onStatusChange);
 
-  // чекбокс отдельно
   if (field.type === "checkbox") {
     return (
       <label htmlFor={field.id} className="form__checkbox">

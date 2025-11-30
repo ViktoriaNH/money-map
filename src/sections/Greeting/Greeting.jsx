@@ -1,8 +1,7 @@
 import "./Greeting.scss";
 import { useNavigate } from "react-router-dom";
-import greetingImg from '../../assets/images/greeting-img.webp'
+import greetingImg from "../../assets/images/greeting-img.webp";
 import Button from "./../../components/Button/index";
-
 
 const Greeting = () => {
   const navigate = useNavigate();
@@ -16,9 +15,9 @@ const Greeting = () => {
         <div className="greeting__content">
           <div className="greeting__text">
             <h1 className="greeting__title">Привет!</h1>
-          <p className="greeting__subtitle">Рады видеть тебя в приложении</p>
+            <p className="greeting__subtitle">Рады видеть тебя в приложении</p>
           </div>
-          
+
           <Button
             className="greeting__button"
             variant="addOperations"
@@ -27,8 +26,8 @@ const Greeting = () => {
             onClick={greetingClick}
           />
         </div>
- 
-      <div className="greeting__image">
+
+        <div className="greeting__image">
           <img
             src={greetingImg}
             alt=""
@@ -36,7 +35,7 @@ const Greeting = () => {
             height="160"
             loading="eager"
           />
-        </div> 
+        </div>
       </div>
     </section>
   );

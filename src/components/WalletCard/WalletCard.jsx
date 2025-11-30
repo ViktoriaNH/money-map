@@ -6,12 +6,18 @@ const WalletCard = () => {
     const [walletColor, setWalletColor] = useState(null); 
 
 return (
-    <div className='wallet-card'>
-        <ColorPicker value={walletColor} onChange={setWalletColor}/>
-        <h1>Привет</h1>
+    <div
+      className="wallet-card"
+      style={{ backgroundColor: walletColor || "#eee" }}
+    >
+      <ColorPicker
+        value={walletColor}
+        onChange={setWalletColor}
+      />
 
+      <h1>Мой кошелёк</h1>
     </div>
-)
+  );
 }
 
 export default WalletCard;

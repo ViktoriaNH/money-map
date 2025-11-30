@@ -9,26 +9,23 @@ const Login = () => {
   const { handleSubmit } = useLoginForm(loginUser);
 
   return (
-
-  <main>
-    <AuthForm
-      title={loginTitle}
-      fields={loginFormFields}
-      submitText={submitTitle}
-      onSubmit={handleSubmit}
-      notice={{
-        text: "Вы еще не зарегистрированы?",
-        linkText: "Регистрация",
-        href: "/auth/register",
-      }}
-    />   
-     //  {/* <div className="auth__image">
+    <main>
+      <AuthForm
+        title={loginTitle}
+        fields={loginFormFields}
+        submitText={submitTitle}
+        onSubmit={handleSubmit}
+        notice={{
+          text: "Вы еще не зарегистрированы?",
+          linkText: "Регистрация",
+          href: "/auth/register",
+        }}
+      />
+      //{" "}
+      {/* <div className="auth__image">
       //   <img src={formsImg} width={604} />
       // </div> */}
-  </main>
-    
-
-    
+    </main>
   );
 };
 
