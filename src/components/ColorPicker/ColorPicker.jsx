@@ -1,9 +1,8 @@
-import { useState } from "react";
+
 import { walletColors } from "../../data/walletColors";
 import "./ColorPicker.scss";
 
-const ColorPicker = () => {
-  const [walletColor, setWalletColor] = useState(null);
+const ColorPicker = ({value, onColorSelect}) => {
 
   return (
     <div className="color-picker">
@@ -11,12 +10,12 @@ const ColorPicker = () => {
         <div
           key={color}
           className={`color-picker__item ${
-            walletColor === color ? "color-picker__item--active" : ""
+            value === color ? "color-picker__item--active" : ""
           }`}
           style={{ backgroundColor: color }}
-          onClick={() => setWalletColor(color)}
+          onClick={() => onColorSelect(color)}
         >
-          {walletColor === color && (
+          {value === color && (
             <span className="color-picker__checked"></span>
           )}
         </div>

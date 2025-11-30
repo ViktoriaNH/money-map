@@ -7,7 +7,6 @@ const InputField = (props) => {
   if (variant === "auth") {
     return <InputFieldAuth {...props} />;
   }
-
   return <InputFieldBase {...props} />;
 };
 
