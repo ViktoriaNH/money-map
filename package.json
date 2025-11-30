@@ -1,5 +1,5 @@
 {
-  "name": "expense-accounting-panel",
+  "name": "income-expense-tracker",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -12,9 +12,6 @@
   },
   "dependencies": {
     "@a1rth/css-normalize": "^1.1.9",
-    "classnames": "^2.5.1",
-    "clsx": "^2.1.1",
-    "imask": "^7.6.1",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-hook-form": "^7.62.0",
