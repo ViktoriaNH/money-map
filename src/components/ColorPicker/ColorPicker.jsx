@@ -2,7 +2,11 @@
 import { walletColors } from "../../data/walletColors";
 import "./ColorPicker.scss";
 
-const ColorPicker = ({value, onColorSelect}) => {
+const ColorPicker = (props) => {
+  const {
+    value,
+    onColorSelect
+  } = props
 
   return (
     <div className="color-picker">

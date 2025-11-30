@@ -1,0 +1,8 @@
+.add-wallet-form {
+      background-color: var(--color-text-button-primary);
+  max-width: 709px;
+  margin: 0 auto;
+  padding: 32px;
+  
+  @include card-border;
+}
