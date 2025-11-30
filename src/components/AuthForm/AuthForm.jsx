@@ -70,6 +70,7 @@ const AuthForm = ({ title, submitText, fields, notice, onSubmit }) => {
               serverErrors={serverErrors}
               clearServerError={clearServerError}
               disabled={isDisabled}
+              variant='auth'
             />
 
             <Button

@@ -1,11 +1,11 @@
 import { useState } from "react";
-import "./InputField.scss";
+import "./InputFieldAuth.scss";
 import { Link } from "react-router-dom";
-import { validateInputs } from "../../utils/validateInput";
-import { getInputClass } from "../../utils/getInputClass";
-import { usePassStatus } from "../../hooks/usePassStatus";
+import { validateInputs } from "../../../utils/validateInput";
+import { getInputClass } from "../../../utils/getInputClass";
+import { usePassStatus } from "../../../hooks/usePassStatus";
 
-const InputField = ({
+const InputFieldAuth = ({
   field,
   onStatusChange,
   serverError,
@@ -161,4 +161,4 @@ const InputField = ({
   );
 };
 
-export default InputField;
+export default InputFieldAuth;

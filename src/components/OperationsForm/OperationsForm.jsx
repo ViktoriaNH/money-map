@@ -15,6 +15,7 @@ const OperationsForm = ({ title, fields, submitText }) => {
             serverErrors={{}}
             clearServerError={() => {}}
             disabled={false}
+            variant="base"
           />
 
           <Button submitText={submitText} variant="saveOperation" />

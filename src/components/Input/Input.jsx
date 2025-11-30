@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "./Input.scss";
-import InputField from "../InputField/InputField";
+import InputField from "../InputField/InputFieldAuth/InputFieldAuth";
 
 const Input = ({
   fields,
@@ -8,17 +8,19 @@ const Input = ({
   onStatusChange,
   serverErrors,
   clearServerError,
+  variant = "auth",
 }) => {
   return (
-    <div className="form__container">
+    <div className={`form__container form__container--${variant}`}>
       {fields.map((field) => (
         <InputField
           key={field.id}
           field={field}
           message={message}
           onStatusChange={onStatusChange}
-          serverError={serverErrors[field.id]} // конкретная ошибка
+          serverError={serverErrors[field.id]}
           clearServerError={clearServerError}
+          variant={variant}
         />
       ))}
     </div>
