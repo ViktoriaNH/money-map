@@ -3,7 +3,11 @@ import "./AddWalletForm.scss";
 import { addWalletfields } from "../../data/operationsFormFields";
 import Button from "../Button/Button";
 
-const AddWalletForm = () => {
+const AddWalletForm = (props) => {
+  const {
+    onAddWallet(formData),
+  } = props;
+
   const operationTitle = "Добавление кошелька";
   const submitTitle = "Добавить";
 

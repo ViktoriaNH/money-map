@@ -1,4 +1,4 @@
-import WalletCard from './WalletCard.jsx';
+import WalletCard from './WalletPage.js';
 
 
 export default WalletCard;

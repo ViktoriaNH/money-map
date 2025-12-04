@@ -5,7 +5,11 @@ import PageWrapper from "../layouts/PageWrapper";
 import Balance from "../sections/Balance";
 import Greeting from "../sections/Greeting/Greeting";
 
-const Dashboard = () => {
+const Dashboard = (props) => {
+  const {
+    handleAddWallet
+  } = props;
+
   usePageTitle("Главная панель");
 
   return (
@@ -14,7 +18,7 @@ const Dashboard = () => {
       <PageWrapper>
         <Greeting />
         <Balance />
-        <AddWalletForm />
+        <AddWalletForm onAddWallet={handleAddWallet} />
       </PageWrapper>
     </div>
   );
