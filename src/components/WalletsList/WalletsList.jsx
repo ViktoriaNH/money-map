@@ -1,30 +1,21 @@
-import { useState } from 'react';
-import './WalletsList.scss';
-import WalletCard from '../WalletCard/WalletCard';
+import "./WalletsList.scss";
+import WalletCard from "../WalletCard/WalletCard";
 
-const WalletsList = () => {
-    const [wallets, setWallets] = useState([]);
-    // wallets — это обычная переменная, где хранятся все кошельки, которые добавит юзер.
-    // он пока пустой []
+const WalletsList = (props) => {
+  const { wallets} = props;
 
-//     setWallets — это инструмент, который говорит React:
-// “Обнови значение wallets и перерисуй интерфейс”
-
-const handleAddWallet = (wallets) => {
-    setWallets(prev => [...prev, wallets]) 
-    // [...prev, wallet] означает: положи в новый массив всё, что было раньше, и добавь новый кошелёк в конец
-}
-
-return (
-    <WalletCard />
-)
-
-
-
-
-}
-
-
+  return (
+    <div className="wallets-list">
+      {wallets.map((wallet) => (
+        <WalletCard
+          key={wallet.id}
+          name={wallet.name}
+          amount={wallet.amount}
+          walletColor={wallet.color}
+        />
+      ))}
+    </div>
+  );
+};
 
 export default WalletsList;
-

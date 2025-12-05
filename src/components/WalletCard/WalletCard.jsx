@@ -1,12 +1,19 @@
 import "./WalletCard.scss";
 
-const WalletCard = ({ walletColor }) => {
+const WalletCard = (props) => {
+  const {
+    name, 
+    amount,
+    walletColor,
+  } = props;
+  
   return (
     <div
       className="wallet-card"
       style={{ backgroundColor: walletColor || "#eee" }}
     >
-      <h1>Мой кошелёк</h1>
+      <h2>{name}</h2>
+      <span>{amount}</span>
     </div>
   );
 };
