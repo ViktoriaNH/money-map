@@ -1,8 +1,7 @@
-import { useNavigate } from "react-router-dom";
 import { addWalletfields } from "../data/operationsFormFields";
 
-const useWalletForm = (onAddWallet) => {
-//   const navigate = useNavigate();
+const useWalletForm = (props) => {
+  const { onAddWallet, onClose } = props;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -13,9 +12,10 @@ const useWalletForm = (onAddWallet) => {
     });
 
     onAddWallet(formData);
+    onClose && onClose();
   };
 
-  return {handleSubmit}
+  return { handleSubmit };
 };
 
 export default useWalletForm;
@@ -27,7 +27,6 @@ export default useWalletForm;
 // «Вот, держи функцию handleSubmit.
 // Когда форма будет отправлена — вызывай её».
 
-
 // 3. Как компонент будет использовать возвращаемый объект
 
 // Представь, что в AddWalletForm ты пишешь:
@@ -37,7 +36,6 @@ export default useWalletForm;
 // Теперь у AddWalletForm есть доступ к функции handleSubmit.
 // И теперь форма может использовать её:
 // <form onSubmit={handleSubmit}>
-
 
 // То есть:
 // Форма вызывает handleSubmit

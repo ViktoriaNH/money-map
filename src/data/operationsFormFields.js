@@ -1,7 +1,7 @@
 export const addWalletfields = [
   {
-    id: "title",
-    name: "title",
+    id: "name",
+    name: "name",
     label: "Название кошелька (карта/наличные)",
     type: "text",
     required: true,

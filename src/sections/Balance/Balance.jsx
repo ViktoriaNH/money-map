@@ -2,9 +2,15 @@ import { useState } from "react";
 import Button from "../../components/Button/Button";
 import WalletsList from "../../components/WalletsList/WalletsList";
 import "./Balance.scss";
-import AddWalletForm from "../../components/AddWalletForm/AddWalletForm";
+import OperationsForm from "./../../components/OperationsForm/index";
+import { addWalletfields } from "./../../data/operationsFormFields";
+import useWalletForm from "./../../hooks/useWalletFrom";
 
-const Balance = () => {
+const Balance = (props) => {
+  const {
+    onAddWallet,
+  } = props;
+
   const [wallets, setWallets] = useState([]);
 
   const [isAddWalletModalOpen, setIsAddWalletModalOpen] = useState(false);
@@ -19,6 +25,14 @@ const Balance = () => {
     setWallets((prev) => [...prev, wallet]);
     // [...prev, wallet] означает: положи в новый массив всё, что было раньше, и добавь новый кошелёк в конец
   };
+
+  const operationTitle = "Добавление кошелька";
+  const submitTitle = "Добавить";
+
+  const { handleSubmit } = useWalletForm({
+  onAddWallet: handleAddWallet,
+  onClose: () => setIsAddWalletModalOpen(false),
+});
 
   return (
     <section className="balance">
@@ -35,7 +49,12 @@ const Balance = () => {
         />
 
         {isAddWalletModalOpen && (
-          <AddWalletForm
+          <OperationsForm
+            title={operationTitle}
+            fields={addWalletfields}
+            submitText={submitTitle}
+            onSubmit={handleSubmit}
+            hiddenInputWithColor={true}
             onAddWallet={handleAddWallet}
             onClose={() => setIsAddWalletModalOpen(false)}
           />
