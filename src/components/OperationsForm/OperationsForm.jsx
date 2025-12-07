@@ -4,7 +4,7 @@ import Input from "../Input/Input";
 import "./OperationsForm.scss";
 
 const OperationsForm = (props) => {
-  const { title, fields } = props;
+  const { title, fields, hiddenInputWithColor = false } = props;
 
   const [walletColor, setWalletColor] = useState(null);
 
@@ -29,7 +29,7 @@ const OperationsForm = (props) => {
 
             return (
               <Input
-                className='operations__input'
+                className="operations__input"
                 key={field.id}
                 fields={[field]}
                 onStatusChange={() => {}}
@@ -40,6 +40,9 @@ const OperationsForm = (props) => {
               />
             );
           })}
+          {hiddenInputWithColor && (
+            <input type="hidden" name="color" value={walletColor || ""} />
+          )}
         </form>
       </div>
     </section>

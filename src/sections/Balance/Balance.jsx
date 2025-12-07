@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Button from "../../components/Button/Button";
-import WalletCard from "../../components/WalletCard/WalletCard";
 import WalletsList from "../../components/WalletsList/WalletsList";
 import "./Balance.scss";
 import AddWalletForm from "../../components/AddWalletForm/AddWalletForm";
@@ -36,8 +35,10 @@ const Balance = () => {
         />
 
         {isAddWalletModalOpen && (
-          <AddWalletForm onAddWallet={handleAddWallet} 
-          onClose={() => setIsAddWalletModalOpen(false)}/>
+          <AddWalletForm
+            onAddWallet={handleAddWallet}
+            onClose={() => setIsAddWalletModalOpen(false)}
+          />
         )}
       </div>
     </section>

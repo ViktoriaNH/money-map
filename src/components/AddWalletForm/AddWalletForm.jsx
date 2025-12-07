@@ -30,6 +30,7 @@ const AddWalletForm = (props) => {
           fields={addWalletfields}
           submitText={submitTitle}
           onSubmit={handleSubmit}
+          hiddenInputWithColor={true}
         />
         <Button
           submitText="Добавить"
