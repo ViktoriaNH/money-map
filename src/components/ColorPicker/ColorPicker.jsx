@@ -6,7 +6,7 @@ const ColorPicker = (props) => {
   const {
     value,
     onColorSelect,
-    setWalletColor
+    // setWalletColor
   } = props
 
   return (
@@ -18,7 +18,7 @@ const ColorPicker = (props) => {
             value === color ? "color-picker__item--active" : ""
           }`}
           style={{ backgroundColor: color }}
-          onClick={() => onColorSelect(setWalletColor)}
+          onClick={() => onColorSelect(color)}
         >
           {value === color && (
             <span className="color-picker__checked"></span>
