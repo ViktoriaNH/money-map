@@ -5,7 +5,8 @@ import "./ColorPicker.scss";
 const ColorPicker = (props) => {
   const {
     value,
-    onColorSelect
+    onColorSelect,
+    setWalletColor
   } = props
 
   return (
@@ -17,7 +18,7 @@ const ColorPicker = (props) => {
             value === color ? "color-picker__item--active" : ""
           }`}
           style={{ backgroundColor: color }}
-          onClick={() => onColorSelect(color)}
+          onClick={() => onColorSelect(setWalletColor)}
         >
           {value === color && (
             <span className="color-picker__checked"></span>

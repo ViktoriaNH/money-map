@@ -12,6 +12,7 @@ const Balance = (props) => {
   } = props;
 
   const [wallets, setWallets] = useState([]);
+  const [counterId, setCounterId] = useState(1);
 
   const [isAddWalletModalOpen, setIsAddWalletModalOpen] = useState(false);
 
@@ -22,8 +23,12 @@ const Balance = (props) => {
   // “Обнови значение wallets и перерисуй интерфейс”
 
   const handleAddWallet = (wallet) => {
-    setWallets((prev) => [...prev, wallet]);
+    const walletWithId = {...wallet, id: counterId}
+
+    setWallets((prev) => [...prev, walletWithId]);
     // [...prev, wallet] означает: положи в новый массив всё, что было раньше, и добавь новый кошелёк в конец
+
+    setCounterId((prev) => prev + 1)
   };
 
   const operationTitle = "Добавление кошелька";

@@ -5,12 +5,10 @@ import "./OperationsForm.scss";
 import closeModalIcon from "../../assets/icons/close-modal-icon.svg";
 import Button from "../Button/Button";
 
-
 const OperationsForm = (props) => {
   const { title, fields, onClose, hiddenInputWithColor = false } = props;
 
   const [walletColor, setWalletColor] = useState(null);
-
 
   return (
     <section className="operations">
@@ -26,7 +24,7 @@ const OperationsForm = (props) => {
 
         <h1 className="operations__title">{title}</h1>
 
-        <form className="operations__form">
+        <form className="operations__form"  onSubmit={props.onSubmit}>
           {fields.map((field) => {
             if (field.type === "color-picker") {
               return (
