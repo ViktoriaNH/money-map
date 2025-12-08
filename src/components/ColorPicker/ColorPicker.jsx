@@ -6,7 +6,6 @@ const ColorPicker = (props) => {
   const {
     value,
     onColorSelect,
-    // setWalletColor
   } = props
 
   return (

@@ -1,12 +1,11 @@
 .button {
   // пишу пока только но оновании двух кнопок Войти и Загистрироваться
-  flex: 1 1 320px; // 320px, но можно меньше/больше
+  // flex: 1 1 320px; // 320px, но можно меньше/больше
+  flex: none;
   max-width: 320px;
   min-width: 0; // разрешаем сжиматься при нехватке места
   width: 100%;
-
   padding-block: fluid(16, 6);
-  // padding-inline: fluid(56, 24);
   text-align: center;
   border-radius: var(--border-radius-xxl);
   cursor: pointer;
@@ -50,11 +49,11 @@
 
   &--addOperations {
     background-color: var(--color-bg-accent-button);
-    flex: 1 1 220px; // 320px, но можно меньше/больше
+    // flex: 1 1 220px; // 320px, но можно меньше/больше
+    flex: none;
     max-width: 220px;
     min-width: 0; // разрешаем сжиматься при нехватке места
     width: 100%;
-
     padding: 8px 32px;
     border: none;
 
@@ -68,12 +67,9 @@
   &--saveOperation {
     background-color: var(--color-background-button-primary);
     color: var(--color-text-button-primary);
-    max-width: 190px;
-    min-width: 0; // разрешаем сжиматься при нехватке места
+    max-width: 220px;
     width: 100%;
-    margin-top: 32px;
-
-    padding: 16px 56px;
+    padding: 16px;
     border: none;
 
     @include text-button;

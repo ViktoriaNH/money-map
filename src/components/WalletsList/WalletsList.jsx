@@ -2,7 +2,7 @@ import "./WalletsList.scss";
 import WalletCard from "../WalletCard/WalletCard";
 
 const WalletsList = (props) => {
-  const { wallets} = props;
+  const { wallets } = props;
 
   return (
     <div className="wallets-list">
@@ -10,7 +10,7 @@ const WalletsList = (props) => {
         <WalletCard
           key={wallet.id}
           name={wallet.name}
-          amount={wallet.amount}
+          amount={`${wallet.amount} BYN`}
           walletColor={wallet.color}
         />
       ))}

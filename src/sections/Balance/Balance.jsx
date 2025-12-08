@@ -5,12 +5,9 @@ import "./Balance.scss";
 import OperationsForm from "./../../components/OperationsForm/index";
 import { addWalletfields } from "./../../data/operationsFormFields";
 import useWalletForm from "./../../hooks/useWalletFrom";
+import { countTotalAmountWallets } from "./../../utils/countTotalAmountWallets";
 
-const Balance = (props) => {
-  const {
-    onAddWallet,
-  } = props;
-
+const Balance = () => {
   const [wallets, setWallets] = useState([]);
   const [counterId, setCounterId] = useState(1);
 
@@ -23,31 +20,41 @@ const Balance = (props) => {
   // “Обнови значение wallets и перерисуй интерфейс”
 
   const handleAddWallet = (wallet) => {
-    const walletWithId = {...wallet, id: counterId}
+    const walletWithId = { ...wallet, id: counterId };
 
     setWallets((prev) => [...prev, walletWithId]);
     // [...prev, wallet] означает: положи в новый массив всё, что было раньше, и добавь новый кошелёк в конец
 
-    setCounterId((prev) => prev + 1)
+    setCounterId((prev) => prev + 1);
   };
 
   const operationTitle = "Добавление кошелька";
   const submitTitle = "Добавить";
 
   const { handleSubmit } = useWalletForm({
-  onAddWallet: handleAddWallet,
-  onClose: () => setIsAddWalletModalOpen(false),
-});
+    onAddWallet: handleAddWallet,
+    onClose: () => setIsAddWalletModalOpen(false),
+  });
 
   return (
     <section className="balance">
       <div className="balance__inner">
         <h1 className="balance__title">Баланс</h1>
-        <span className="balance__amount">3000 BYN</span>
-        <WalletsList wallets={wallets} />
+        <span className="balance__amount">
+          {wallets.length > 0 ? (
+            <>
+              <span className="balance__total-amount">
+                {`${countTotalAmountWallets(wallets)} BYN`} 
+              </span>
+              <WalletsList wallets={wallets} />
+            </>
+          ) : (
+            "Кошельки еще не добавлены"
+          )}
+        </span>
         <Button
           className="balance__button"
-          variant="addOperations"
+          variant="saveOperation"
           submitText="Добавить кошелек"
           type="button"
           onClick={() => setIsAddWalletModalOpen(true)}
