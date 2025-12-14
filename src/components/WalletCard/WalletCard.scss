@@ -4,4 +4,16 @@
   padding: 16px;
   border-radius: var(--border-radius-m);
   background-color: aqua;
+  display: flex;
+  flex-direction: column;
+  gap: 68px;
+   color: var(--color-text-button-primary);
+
+  &__title {
+       @include text-style(16, 8, 500, 24px);
+      
+
+       display: flex;
+       justify-content: space-between;
+  }
 }
