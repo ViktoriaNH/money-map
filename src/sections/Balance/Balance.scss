@@ -1,7 +1,6 @@
 .balance {
   background-color: var(--color-text-button-primary);
   padding: 32px 0 32px 32px;
-
   @include card-border;
 
   &__inner {
@@ -13,4 +12,8 @@
   &__total-amount {
     @include text-style(24, 12, 400, 32px);
   }
+
+  // &__button {
+
+  // }
 }

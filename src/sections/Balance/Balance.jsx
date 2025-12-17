@@ -6,6 +6,7 @@ import OperationsForm from "./../../components/OperationsForm/index";
 import { addWalletfields } from "./../../data/operationsFormFields";
 import useWalletForm from "./../../hooks/useWalletFrom";
 import { countTotalAmountWallets } from "./../../utils/countTotalAmountWallets";
+import Modal from "../../components/Modal/Modal";
 
 const Balance = () => {
   const [wallets, setWallets] = useState([]);
@@ -44,7 +45,7 @@ const Balance = () => {
           {wallets.length > 0 ? (
             <>
               <span className="balance__total-amount">
-                {`${countTotalAmountWallets(wallets)} BYN`} 
+                {`${countTotalAmountWallets(wallets)} BYN`}
               </span>
               <WalletsList wallets={wallets} />
             </>
@@ -61,15 +62,17 @@ const Balance = () => {
         />
 
         {isAddWalletModalOpen && (
-          <OperationsForm
-            title={operationTitle}
-            fields={addWalletfields}
-            submitText={submitTitle}
-            onSubmit={handleSubmit}
-            hiddenInputWithColor={true}
-            onAddWallet={handleAddWallet}
-            onClose={() => setIsAddWalletModalOpen(false)}
-          />
+          <Modal onClose={() => setIsAddWalletModalOpen(false)}>
+            <OperationsForm
+              title={operationTitle}
+              fields={addWalletfields}
+              submitText={submitTitle}
+              onSubmit={handleSubmit}
+              hiddenInputWithColor={true}
+              onAddWallet={handleAddWallet}
+              onClose={() => setIsAddWalletModalOpen(false)}
+            />
+          </Modal>
         )}
       </div>
     </section>
