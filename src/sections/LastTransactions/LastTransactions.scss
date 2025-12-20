@@ -1,0 +1,11 @@
+.last-transaction {
+  background-color: var(--color-text-button-primary);
+  padding: 32px 0 32px 32px;
+  @include card-border;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+}

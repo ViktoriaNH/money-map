@@ -4,6 +4,8 @@ import editWalletIcon from "../../assets/icons/edit-wallet.svg";
 const WalletCard = (props) => {
   const { name, amount, walletColor } = props;
 
+    const numericAmount = (amount || "0").replace(/\D/g, "");
+
   return (
     <div
       className="wallet-card"
@@ -21,7 +23,7 @@ const WalletCard = (props) => {
         />
       </div>
 
-      <span>{amount}</span>
+      <span>{numericAmount} BYN</span>
     </div>
   );
 };

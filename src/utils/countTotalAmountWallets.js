@@ -1,9 +1,12 @@
 export const countTotalAmountWallets = (wallets) => {
-    let totalAmount = 0;
+  let totalAmount = 0;
 
-    for (let i = 0; i < wallets.length; i++) {
-        totalAmount += Number(wallets[i].amount || 0)
-    }
+  for (let i = 0; i < wallets.length; i++) {
+    const amountFromUser = wallets[i].amount || "0";
+    const amountWithNumbers = amountFromUser.replace(/\D/g, "");
 
-    return totalAmount;
-}
+    totalAmount += Number(amountWithNumbers);
+  }
+
+  return totalAmount;
+};
