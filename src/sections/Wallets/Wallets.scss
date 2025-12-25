@@ -1,7 +1,5 @@
-.balance {
+.wallets {
   background-color: var(--color-text-button-primary);
-  width: 290px;
-  height: 536px;
   padding: 32px 0 32px 32px;
   @include card-border;
 
@@ -9,5 +7,9 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
+  }
+
+  &__total-amount {
+    @include text-style(24, 12, 400, 32px);
   }
 }

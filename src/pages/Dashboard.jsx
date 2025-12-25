@@ -2,9 +2,10 @@
 import usePageTitle from "../hooks/usePageTitle";
 import Header from "../layouts/Header/Header";
 import PageWrapper from "../layouts/PageWrapper";
-import Balance from "../sections/Balance";
+import Balance from "../sections/Balance/Balance";
 import Greeting from "../sections/Greeting/Greeting";
 import LastTransactions from "../sections/LastTransactions/LastTransactions";
+import Wallets from "../sections/Wallets";
 
 const Dashboard = () => {
 
@@ -15,9 +16,10 @@ const Dashboard = () => {
       <Header />
       <PageWrapper>
         <Greeting />
-        <Balance />
+        <Wallets />
         <LastTransactions />
       </PageWrapper>
+
     </div>
   );
 };
